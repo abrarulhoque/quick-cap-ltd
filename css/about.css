@@ -1,0 +1,293 @@
+/* 
+* QuickCap Ltd - About Page Stylesheet
+* Enhanced styles for the about page sections
+*/
+
+/* Mission Section Enhancements */
+.mission-section {
+  position: relative;
+  padding: 4rem 0;
+  background-color: #f8fafc;
+}
+
+.mission-section .mission-content {
+  padding: 2.5rem;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.mission-section .mission-content p {
+  margin-bottom: 1.25rem;
+  color: #374151;
+}
+
+.mission-section .mission-content p:last-child {
+  margin-bottom: 0;
+}
+
+.mission-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(248, 250, 252, 0) 100%);
+  z-index: 1;
+}
+
+/* Values Section Enhancements */
+.values-section {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  padding: 5rem 0;
+}
+
+.values-section .value-card {
+  padding: 2.5rem 2rem;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.values-section .value-card h3 {
+  font-size: 1.35rem;
+  margin: 1.5rem 0 1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.values-section .value-card p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.values-section .icon-wrapper {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(59, 130, 246, 0.25)
+  );
+  width: 70px;
+  height: 70px;
+}
+
+.values-section .icon-wrapper i {
+  font-size: 30px;
+  color: #2563eb;
+}
+
+.values-section .value-card:hover {
+  transform: translateY(-10px);
+}
+
+.values-section .value-card:hover .icon-wrapper {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.2),
+    rgba(59, 130, 246, 0.4)
+  );
+}
+
+/* Journey Section Enhancements */
+.journey-section {
+  padding: 6rem 0;
+  background-attachment: fixed;
+  background-image: url('../images/hero-pattern.svg'),
+    linear-gradient(135deg, #1e40af, #3b82f6);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+}
+
+.journey-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.7);
+  z-index: 1;
+}
+
+.journey-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.journey-section .section-title {
+  color: #ffffff;
+}
+
+.journey-section .section-title:after {
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.5));
+}
+
+.journey-section .journey-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-section .journey-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.journey-section .journey-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Team Section Enhancements */
+.team-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.team-section .team-content {
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.team-section .team-content p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.team-section .team-member {
+  padding: 2.5rem 1.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-section .team-member:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #2563eb, #3b82f6) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.team-section .team-member:hover:before {
+  opacity: 1;
+}
+
+.team-section .member-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.team-section .member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+  transition: all 0.4s ease;
+}
+
+.team-section .team-member:hover .member-image img {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
+}
+
+.team-section .member-info {
+  position: relative;
+  z-index: 2;
+}
+
+.team-section .member-info h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+}
+
+.team-section .member-info .position {
+  color: #2563eb;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.team-section .member-info .bio {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* CTA Section Enhancements for About Page */
+.about-cta-section .cta-content {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.95),
+    rgba(30, 64, 175, 0.95)
+  );
+  border: none;
+}
+
+.about-cta-section .cta-content h2,
+.about-cta-section .cta-content p {
+  color: #ffffff;
+}
+
+.about-cta-section .btn-outline-primary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.about-cta-section .btn-outline-primary:hover {
+  background-color: #ffffff;
+  color: #2563eb;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .values-section .value-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .team-section .team-member {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .journey-section {
+    padding: 4rem 0;
+    background-attachment: scroll;
+  }
+
+  .team-section {
+    padding: 4rem 0;
+  }
+
+  .mission-section .mission-content,
+  .journey-section .journey-content {
+    padding: 2rem 1.5rem;
+  }
+}

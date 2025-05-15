@@ -183,16 +183,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Parallax effect for sections with parallax class
-    document.querySelectorAll('.parallax').forEach(element => {
+    document.querySelectorAll('.parallax-bg').forEach(element => {
       const scrollPosition = window.pageYOffset
       const elementTop = element.getBoundingClientRect().top + scrollPosition
       const offset = (scrollPosition - elementTop) * 0.2
 
-      if (element.classList.contains('parallax-bg')) {
-        element.style.backgroundPositionY = `${offset}px`
-      } else {
-        element.style.transform = `translateY(${offset}px)`
-      }
+      // Apply parallax effect for background
+      element.style.backgroundPositionY = `${offset}px`
     })
   }
 
@@ -252,42 +249,72 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
-  // Initialize counter animations for statistics if they exist
-  const counterElements = document.querySelectorAll('.counter')
-  if (counterElements.length > 0) {
-    const animateCounter = (element, target) => {
-      let current = 0
-      const increment = target / 50 // Divide animation into steps
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= target) {
-          current = target
-          clearInterval(timer)
-        }
-        element.textContent = Math.floor(current)
-      }, 30)
+  // Number counters with animation for statistics
+  const animateCounter = (element, target) => {
+    const count = +element.innerText
+    const increment = target / 200 // Divide target by animation steps
+
+    if (count < target) {
+      element.innerText = Math.ceil(count + increment)
+      setTimeout(() => animateCounter(element, target), 10)
+    } else {
+      element.innerText = target.toLocaleString()
     }
+  }
 
-    // Trigger counter animations when elements come into view
-    const observeCounters = () => {
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const target = parseInt(entry.target.getAttribute('data-target'))
-              animateCounter(entry.target, target)
-              observer.unobserve(entry.target) // Only animate once
-            }
-          })
-        },
-        { threshold: 0.5 }
-      )
+  const observeCounters = () => {
+    const counters = document.querySelectorAll('.counter-value')
 
-      counterElements.forEach(counter => {
-        observer.observe(counter)
-      })
-    }
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = +entry.target.getAttribute('data-target')
+            entry.target.innerText = '0'
+            animateCounter(entry.target, target)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
 
+    counters.forEach(counter => {
+      observer.observe(counter)
+    })
+  }
+
+  // Initialize counter animations if counters exist
+  if (document.querySelector('.counter-value')) {
     observeCounters()
+  }
+
+  // Add support for team member hover effects on about page
+  const teamMembers = document.querySelectorAll('.team-member')
+  if (teamMembers.length > 0) {
+    teamMembers.forEach(member => {
+      member.addEventListener('mouseenter', () => {
+        member.style.transform = 'translateY(-10px)'
+      })
+
+      member.addEventListener('mouseleave', () => {
+        member.style.transform = 'translateY(0)'
+      })
+    })
+  }
+
+  // Add subtle parallax effect to journey section
+  const journeySection = document.querySelector('.journey-section')
+  if (journeySection) {
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY
+      const sectionPos = journeySection.offsetTop
+      const scrollDifference = scrollPos - sectionPos
+
+      if (scrollDifference > -500 && scrollDifference < 500) {
+        const translateY = scrollDifference * 0.1
+        journeySection.style.backgroundPositionY = `${translateY}px`
+      }
+    })
   }
 })

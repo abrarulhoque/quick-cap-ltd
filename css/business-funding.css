@@ -1,0 +1,476 @@
+/* 
+* QuickCap Ltd - Business Funding Page Stylesheet
+* Enhanced styles for the business funding page sections
+*/
+
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(to right, #4338ca, #3b82f6);
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
+
+/* Typography overrides to match home page */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseSoft {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Custom button styles */
+.animated-gradient-btn {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #4338ca 0%,
+    #3b82f6 50%,
+    #0ea5e9 100%
+  );
+  transition: 0.5s;
+}
+
+.animated-gradient-btn:hover {
+  background-position: right center;
+}
+
+/* Business Advance Section Styles */
+.business-advance-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.business-advance-content {
+  padding: 2.5rem;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.business-advance-content p {
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.key-features {
+  margin-top: 2rem;
+}
+
+.key-feature {
+  transition: all 0.3s ease-in-out;
+}
+
+.key-feature:hover {
+  transform: translateY(-5px);
+}
+
+.key-feature i {
+  font-size: 2rem;
+  color: #2563eb;
+}
+
+.key-feature h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+}
+
+.key-feature p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+/* Funding Uses Section Styles */
+.funding-uses-section {
+  background-color: #ffffff;
+  padding: 5rem 0;
+}
+
+.use-case-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.use-case-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.use-case-card .icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(37, 99, 235, 0.2)
+  );
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.use-case-card:hover .icon-wrapper {
+  transform: scale(1.1);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(37, 99, 235, 0.3)
+  );
+}
+
+.use-case-card .icon-wrapper i {
+  font-size: 2rem;
+  color: #2563eb;
+}
+
+.use-case-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e40af;
+}
+
+.use-case-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Funding Terms Section Styles */
+.funding-terms-section {
+  background: linear-gradient(135deg, #f1f5f9, #f8fafc);
+  padding: 6rem 0;
+  position: relative;
+}
+
+.funding-terms-content .section-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.funding-terms-content .section-title:after {
+  margin-left: 0;
+}
+
+.funding-terms-content .lead {
+  margin-bottom: 2rem;
+  color: #374151;
+}
+
+.funding-options {
+  margin-top: 2rem;
+}
+
+.funding-option {
+  transition: all 0.3s ease;
+}
+
+.funding-option:hover {
+  transform: translateX(5px);
+}
+
+.option-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(59, 130, 246, 0.2)
+  );
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.funding-option:hover .option-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.2),
+    rgba(59, 130, 246, 0.3)
+  );
+  transform: scale(1.1);
+}
+
+.option-icon i {
+  font-size: 1.75rem;
+  color: #2563eb;
+}
+
+.option-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1e40af;
+}
+
+.option-details p {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+.calculator-card {
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  border-radius: 50%;
+  color: white;
+}
+
+.calculator-icon i {
+  font-size: 1.5rem;
+}
+
+.calculator-details {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.calc-row {
+  font-size: 1rem;
+}
+
+.calc-divider {
+  height: 1px;
+  background: linear-gradient(to right, #ddd, transparent);
+}
+
+/* Industries Section Modified Styles */
+.industries-section {
+  background: #ffffff;
+  padding: 5rem 0;
+}
+
+.industries-section .section-subtitle {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Eligibility Section Styles */
+.eligibility-section {
+  background-color: #f8fafc;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.eligibility-image img {
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.eligibility-image:hover img {
+  transform: scale(1.02) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.eligibility-content .section-title {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.eligibility-content .section-title:after {
+  margin-left: 0;
+}
+
+.criteria-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(59, 130, 246, 0.2)
+  );
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.criteria-item:hover .criteria-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.2),
+    rgba(59, 130, 246, 0.3)
+  );
+  transform: scale(1.1);
+}
+
+.criteria-icon i {
+  font-size: 1.5rem;
+  color: #2563eb;
+}
+
+.criteria-text h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1e40af;
+}
+
+.criteria-text p {
+  margin-bottom: 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.criteria-item {
+  transition: all 0.3s ease;
+}
+
+.criteria-item:hover {
+  transform: translateX(5px);
+}
+
+/* CTA Section - slightly modified for this page */
+.cta-section {
+  background: linear-gradient(135deg, #2563eb, #4f46e5, #1e40af);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.cta-content.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .business-advance-section,
+  .funding-uses-section,
+  .funding-terms-section,
+  .industries-section,
+  .eligibility-section {
+    padding: 4rem 0;
+  }
+
+  .funding-terms-content {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .business-advance-section,
+  .funding-uses-section,
+  .funding-terms-section,
+  .industries-section,
+  .eligibility-section {
+    padding: 3rem 0;
+  }
+
+  .business-advance-content,
+  .calculator-card {
+    padding: 1.5rem;
+  }
+
+  .use-case-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .eligibility-image {
+    margin-bottom: 2rem;
+  }
+}

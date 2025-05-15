@@ -49,6 +49,14 @@
 
   /* Transitions */
   --transition-speed: 0.3s;
+
+  /* Custom colors */
+  --bs-primary: #2563eb;
+  --bs-primary-rgb: 37, 99, 235;
+  --bs-secondary: #6366f1;
+  --bs-indigo: #4338ca;
+  --bs-blue: #3b82f6;
+  --bs-pink: #ec4899;
 }
 
 /* Base Styles */
@@ -1207,5 +1215,244 @@ section {
   100% {
     opacity: 0.15;
     transform: scale(1.05);
+  }
+}
+
+/* Utility classes */
+.hover-float {
+  transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+  transform: translateY(-5px);
+}
+
+.blur-effect {
+  filter: blur(50px);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bg-opacity-10 {
+  --bs-bg-opacity: 0.1;
+}
+
+.border-opacity-25 {
+  --bs-border-opacity: 0.25;
+}
+
+.border-opacity-10 {
+  --bs-border-opacity: 0.1;
+}
+
+/* Color utilities */
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-blue {
+  color: var(--bs-blue) !important;
+}
+
+.text-indigo {
+  color: var(--bs-indigo) !important;
+}
+
+.text-pink {
+  color: var(--bs-pink) !important;
+}
+
+.bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.bg-purple-50 {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.bg-indigo-50 {
+  background-color: rgba(67, 56, 202, 0.1);
+}
+
+.bg-pink-50 {
+  background-color: rgba(236, 72, 153, 0.1);
+}
+
+/* Footer styling */
+.footer {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  padding: 5rem 0 2rem;
+}
+
+.footer-logo {
+  height: 45px;
+}
+
+.footer h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer-about {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #d1d5db;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.footer-contact li i {
+  margin-right: 0.75rem;
+  color: var(--bs-primary);
+  font-size: 1.25rem;
+}
+
+.footer-contact a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--bs-primary);
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-disclaimer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-disclaimer p {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* CTA section */
+.cta-section {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.cta-content {
+  padding: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #4b5563;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cta-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.75rem;
   }
 }

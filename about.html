@@ -98,46 +98,98 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Hero Section - New Design -->
+    <section class="hero-gradient text-white py-16" style="margin-top: 80px">
       <div class="container">
+        <!-- Animated background shapes -->
+        <div class="position-relative overflow-hidden">
+          <div
+            class="position-absolute top-0 start-0 w-25 h-25 bg-white opacity-10 rounded-circle blur-effect animate-pulse-soft"
+          ></div>
+          <div
+            class="position-absolute bottom-0 end-0 w-25 h-25 bg-white opacity-10 rounded-circle blur-effect animate-pulse-soft"
+            style="animation-delay: 1s"
+          ></div>
+        </div>
+
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h1 class="animate__animated animate__fadeInUp">
-              Empowering UK Businesses with Swift & Simple Funding
+          <div class="col-lg-6 animate-fade-in">
+            <h1 class="fw-bold mb-4">
+              Fast & Flexible Business Funding for UK SMEs
             </h1>
-            <p
-              class="lead animate__animated animate__fadeInUp animate__delay-1s"
-            >
-              At QuickCap Ltd, we're dedicated to fueling the growth and
-              stability of Small and Medium-sized Enterprises across the United
-              Kingdom. We understand the challenges UK businesses face and offer
-              a refreshingly straightforward approach to accessing the capital
-              you need, when you need it.
+            <p class="lead mb-4">
+              Get the money you need to take your business to the next level.
+              Funding typically within 24 hours, funds typically within 24-48
+              hours. No up-front costs - free to get a quote.
             </p>
-            <div
-              class="hero-cta animate__animated animate__fadeInUp animate__delay-2s"
-            >
-              <a href="apply.html" class="btn btn-primary btn-lg hover-float"
-                >Apply Now</a
-              >
+            <div class="d-flex flex-wrap gap-3 mb-4">
               <a
-                href="contact.html"
-                class="btn btn-outline-light btn-lg ms-3 hover-float"
-                >Contact Us</a
+                href="apply.html"
+                class="btn btn-primary btn-lg animated-gradient-btn"
               >
+                Apply Now
+              </a>
+              <a href="how-it-works.html" class="btn btn-outline-light btn-lg">
+                How It Works
+                <i
+                  class="material-icons align-middle ms-1"
+                  style="font-size: 18px"
+                  >arrow_forward</i
+                >
+              </a>
+            </div>
+            <div class="d-flex align-items-center gap-4 text-small mt-4">
+              <div class="d-flex align-items-center">
+                <i
+                  class="material-icons text-primary me-1"
+                  style="font-size: 20px"
+                  >check_circle</i
+                >
+                <span>UK Based</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i
+                  class="material-icons text-primary me-1"
+                  style="font-size: 20px"
+                  >check_circle</i
+                >
+                <span>Trusted by Businesses</span>
+              </div>
             </div>
           </div>
+
           <div class="col-lg-6 d-none d-lg-block">
-            <img
-              src="images/about.webp"
-              alt="About QuickCap Ltd"
-              class="img-fluid hero-image animate__animated animate__fadeIn animate__delay-1s"
-            />
+            <div class="position-relative">
+              <div
+                class="position-absolute inset-0 bg-white opacity-10 blur-effect"
+              ></div>
+              <div
+                class="bg-white bg-opacity-10 backdrop-blur rounded p-4 border border-white border-opacity-25 shadow-lg animate-float"
+              >
+                <img
+                  src="images/hero-banner.jpg"
+                  alt="Business owner"
+                  class="img-fluid rounded mb-4"
+                />
+                <div
+                  class="p-3 bg-white bg-opacity-10 backdrop-blur rounded border border-white border-opacity-10"
+                >
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <p class="small fw-medium mb-1">Funding Amount</p>
+                      <p class="fs-3 fw-bold mb-0">£25,000</p>
+                    </div>
+                    <div>
+                      <p class="small fw-medium mb-1">Approval Time</p>
+                      <p class="fs-3 fw-bold mb-0">24hrs</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="hero-shape"></div>
     </section>
 
     <!-- Mission & Vision Section -->
@@ -170,75 +222,63 @@
       </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="values-section">
+    <!-- Values Section - Replaced with Features design from the image -->
+    <section class="py-5">
       <div class="container">
-        <h2 class="section-title text-center" data-aos="fade-up">
-          The QuickCap Ltd Difference: Funding Built Around You
-        </h2>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div
-              class="value-card gradient-border"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="icon-wrapper">
-                <i class="material-icons">speed</i>
-              </div>
-              <h3>Speed & Simplicity</h3>
-              <p>
-                We've streamlined our processes to ensure a fast application and
-                rapid decision-making, because we know your time is valuable.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div
-              class="value-card gradient-border"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="icon-wrapper">
-                <i class="material-icons">location_on</i>
-              </div>
-              <h3>UK Focused Expertise</h3>
-              <p>
-                Our team is based in the UK and understands the nuances of the
-                local market, offering tailored support for British businesses.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div
-              class="value-card gradient-border"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="icon-wrapper">
-                <i class="material-icons">verified_user</i>
-              </div>
-              <h3>Transparency & Trust</h3>
-              <p>
-                We believe in clear communication. All costs are agreed upfront,
-                with no hidden fees or surprises. Building trust is at the core
-                of what we do.
-              </p>
-            </div>
-          </div>
+        <h2 class="section-title">Funding That Works For Your UK Business</h2>
+        <p class="section-subtitle">
+          We provide tailored business funding solutions designed for UK SMEs
+        </p>
+
+        <div class="row g-4">
           <div class="col-md-6 col-lg-3">
-            <div
-              class="value-card gradient-border"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div class="icon-wrapper">
-                <i class="material-icons">settings</i>
+            <div class="feature-card">
+              <div class="feature-icon bg-blue-50">
+                <i class="material-icons text-primary">bolt</i>
               </div>
-              <h3>Flexible Solutions</h3>
-              <p>
-                We offer adaptable funding options and repayment plans designed
-                to fit the unique cash flow of your business.
+              <h3 class="fs-5 fw-bold mb-3">Rapid Funding</h3>
+              <p class="text-muted">
+                Quick application process and fast funding decisions. Get funds
+                typically within 48 hours.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon bg-purple-50">
+                <i class="material-icons text-indigo">description</i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-3">Simple Application</h3>
+              <p class="text-muted">
+                Our streamlined application takes minutes to complete with
+                minimal paperwork required.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon bg-indigo-50">
+                <i class="material-icons text-blue">layers</i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-3">Flexible Solutions</h3>
+              <p class="text-muted">
+                Multiple funding options to meet your specific business needs
+                and repayment capabilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="feature-icon bg-pink-50">
+                <i class="material-icons text-pink">people</i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-3">UK Based Support</h3>
+              <p class="text-muted">
+                Our team of experts are based in the UK and ready to support you
+                every step of the way.
               </p>
             </div>
           </div>

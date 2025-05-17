@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Apply for Business Funding | Quick Online Application | QuickCap Ltd UK
+    </title>
+    <meta
+      name="description"
+      content="Apply for fast and flexible business funding with QuickCap Ltd. Simple online form, quick decisions for UK SMEs. Get your no-obligation quote today."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Application Page CSS -->
+    <style>
+      /* Application specific styles */
+      .apply-hero {
+        position: relative;
+        padding: 120px 0 80px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        margin-bottom: 50px;
+        overflow: hidden;
+      }
+
+      .apply-shape {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #f9fafb;
+        border-radius: 100% 100% 0 0;
+        z-index: 1;
+      }
+
+      .application-section {
+        background-color: #f9fafb;
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .application-card {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        background-color: white;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      /* Add a specific class for the main form card */
+      .application-card.main-form-card {
+        height: 100%;
+      }
+
+      .application-form .form-control {
+        border: 1px solid #e1e5ea;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+      }
+
+      .application-form .form-control:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+      }
+
+      .application-form .form-label {
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .application-form .form-select {
+        border: 1px solid #e1e5ea;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        height: auto;
+      }
+
+      .form-group-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #2563eb;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e1e5ea;
+      }
+
+      .form-check-input:checked {
+        background-color: #2563eb;
+        border-color: #2563eb;
+      }
+
+      .submit-btn {
+        background-color: #2563eb;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .what-next-card {
+        background-color: #f0f9ff;
+        border-left: 4px solid #2563eb;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .what-next-item {
+        display: flex;
+        margin-bottom: 15px;
+      }
+
+      .what-next-number {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #2563eb;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin-right: 15px;
+      }
+
+      .benefits-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .benefit-item {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .benefit-item i {
+        color: #2563eb;
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .benefit-item {
+          flex: 1 1 100%;
+        }
+      }
+
+      /* Fix for Bootstrap columns to ensure they appear side by side on larger screens */
+      @media (min-width: 992px) {
+        .application-section .row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .application-section .col-lg-8,
+        .application-section .col-lg-4 {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .form-slider {
+        margin-bottom: 20px;
+      }
+
+      .slider-container {
+        padding: 0 10px;
+      }
+
+      .slider-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2563eb;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      input[type='range'] {
+        width: 100%;
+        height: 8px;
+        border-radius: 5px;
+        background: #e1e5ea;
+        outline: none;
+        -webkit-appearance: none;
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #2563eb;
+        cursor: pointer;
+      }
+
+      .range-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        color: #6c757d;
+        font-size: 0.75rem;
+      }
+    </style>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="QuickCap Ltd Logo" class="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="business-funding.html"
+                >Business Funding</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="how-it-works.html">How It Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="brokers.html">For Brokers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0 d-flex align-items-center">
+            <a href="tel:03333333333" class="phone-number me-3"
+              >0333 333 3333</a
+            >
+            <a
+              href="apply.html"
+              class="btn btn-primary apply-btn hover-float active"
+              >Apply Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Apply Hero Section -->
+    <section class="apply-hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8 text-center">
+            <h1 class="animate__animated animate__fadeInUp">
+              Apply for Fast Business Funding
+            </h1>
+            <p
+              class="lead animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              Complete our simple and secure form in minutes to get a
+              no-obligation quote. No up-front credit check required to see your
+              options.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="apply-shape"></div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <!-- Application Form -->
+            <div class="application-card main-form-card" data-aos="fade-up">
+              <form class="application-form" id="application-form">
+                <!-- Form Group 1: About Your Business -->
+                <div class="mb-4">
+                  <h3 class="form-group-title">About Your Business</h3>
+
+                  <div class="mb-3">
+                    <label for="business-name" class="form-label"
+                      >Registered Business Name*</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="business-name"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="trading-name" class="form-label"
+                      >Trading Name (if different)</label
+                    >
+                    <input type="text" class="form-control" id="trading-name" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="crn" class="form-label"
+                      >Company Registration Number (CRN)*</label
+                    >
+                    <input type="text" class="form-control" id="crn" required />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="postcode" class="form-label"
+                      >Business Postcode*</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postcode"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="trading-time" class="form-label"
+                      >How long has your business been trading?*</label
+                    >
+                    <select class="form-select" id="trading-time" required>
+                      <option value="" selected disabled>
+                        Please select...
+                      </option>
+                      <option value="6-12 months">6-12 months</option>
+                      <option value="1-2 years">1-2 years</option>
+                      <option value="2-5 years">2-5 years</option>
+                      <option value="5+ years">5+ years</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="industry" class="form-label">Industry*</label>
+                    <select class="form-select" id="industry" required>
+                      <option value="" selected disabled>
+                        Please select...
+                      </option>
+                      <option value="Retail">Retail</option>
+                      <option value="Hospitality">Hospitality</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Manufacturing">Manufacturing</option>
+                      <option value="Professional Services">
+                        Professional Services
+                      </option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Transport & Logistics">
+                        Transport & Logistics
+                      </option>
+                      <option value="Technology">Technology</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="turnover" class="form-label"
+                      >Average Monthly Revenue/Turnover*</label
+                    >
+                    <select class="form-select" id="turnover" required>
+                      <option value="" selected disabled>
+                        Please select...
+                      </option>
+                      <option value="£10k-£20k">£10,000 - £20,000</option>
+                      <option value="£20k-£50k">£20,000 - £50,000</option>
+                      <option value="£50k-£100k">£50,000 - £100,000</option>
+                      <option value="£100k+">£100,000+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Form Group 2: Funding Requirements -->
+                <div class="mb-4">
+                  <h3 class="form-group-title">Funding Requirements</h3>
+
+                  <div class="mb-3">
+                    <label for="funding-amount" class="form-label"
+                      >How much funding do you need?*</label
+                    >
+                    <div class="form-slider">
+                      <div class="slider-container">
+                        <input
+                          type="range"
+                          min="5000"
+                          max="500000"
+                          step="5000"
+                          value="100000"
+                          id="amount-slider"
+                          class="form-range"
+                        />
+                        <div class="slider-value">
+                          £<span id="amount-value">100,000</span>
+                        </div>
+                        <div class="range-labels">
+                          <span>£5,000</span>
+                          <span>£500,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="funding-purpose" class="form-label"
+                      >What is the primary purpose of the funding?*</label
+                    >
+                    <select class="form-select" id="funding-purpose" required>
+                      <option value="" selected disabled>
+                        Please select...
+                      </option>
+                      <option value="Stock">Stock/Inventory</option>
+                      <option value="Cash Flow">Cash Flow</option>
+                      <option value="Expansion">Business Expansion</option>
+                      <option value="Equipment">Equipment Purchase</option>
+                      <option value="Marketing">Marketing & Growth</option>
+                      <option value="VAT">VAT/Tax Payment</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="repayment-term" class="form-label"
+                      >Preferred Repayment Term</label
+                    >
+                    <select class="form-select" id="repayment-term">
+                      <option value="" selected disabled>
+                        Please select...
+                      </option>
+                      <option value="3 months">3 months</option>
+                      <option value="6 months">6 months</option>
+                      <option value="9 months">9 months</option>
+                      <option value="12 months">12 months</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Form Group 3: Your Contact Details -->
+                <div class="mb-4">
+                  <h3 class="form-group-title">Your Contact Details</h3>
+
+                  <div class="mb-3">
+                    <label for="full-name" class="form-label"
+                      >Your Full Name*</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="full-name"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="position" class="form-label"
+                      >Your Position in the Business*</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="position"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label"
+                      >Business Email Address*</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="phone" class="form-label"
+                      >Business Phone Number*</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Form Group 4: Consents & Submission -->
+                <div class="mb-4">
+                  <h3 class="form-group-title">Terms & Submission</h3>
+
+                  <div class="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="authorization"
+                      required
+                    />
+                    <label class="form-check-label" for="authorization">
+                      I confirm I am a director/owner authorised to apply on
+                      behalf of the business.*
+                    </label>
+                  </div>
+
+                  <div class="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="terms"
+                      required
+                    />
+                    <label class="form-check-label" for="terms">
+                      I have read and agree to the QuickCap Ltd
+                      <a href="privacy-policy.html" target="_blank"
+                        >Privacy Policy</a
+                      >
+                      and
+                      <a href="terms-conditions.html" target="_blank"
+                        >Terms & Conditions</a
+                      >.*
+                    </label>
+                  </div>
+
+                  <div class="mb-4 form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="marketing"
+                    />
+                    <label class="form-check-label" for="marketing">
+                      I would like to receive news and offers from QuickCap Ltd
+                      by email.
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn submit-btn btn-lg hover-float"
+                  >
+                    Get My Quote
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <!-- What Happens Next Section -->
+            <div
+              class="application-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3 class="form-group-title">What to Expect After You Apply</h3>
+
+              <div class="what-next-card">
+                <div class="what-next-item">
+                  <div class="what-next-number">1</div>
+                  <div>
+                    <strong>Quick Review:</strong> Our UK team will review your
+                    application.
+                  </div>
+                </div>
+
+                <div class="what-next-item">
+                  <div class="what-next-number">2</div>
+                  <div>
+                    <strong>Contact from Specialist:</strong> A funding
+                    specialist may contact you for any clarifications.
+                  </div>
+                </div>
+
+                <div class="what-next-item">
+                  <div class="what-next-number">3</div>
+                  <div>
+                    <strong>Receive Your Offer:</strong> You'll typically
+                    receive a no-obligation offer within a few business hours.
+                  </div>
+                </div>
+
+                <div class="what-next-item">
+                  <div class="what-next-number">4</div>
+                  <div>
+                    <strong>Fast Funding:</strong> If you accept, funds can be
+                    in your account within 24-48 hours.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Why Apply with QuickCap Ltd? -->
+            <div
+              class="application-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 class="form-group-title">Why Apply with QuickCap Ltd?</h3>
+
+              <div class="benefits-icons">
+                <div class="benefit-item">
+                  <i class="material-icons">verified_user</i>
+                  <span>No Up-Front Credit Check</span>
+                </div>
+
+                <div class="benefit-item">
+                  <i class="material-icons">lock</i>
+                  <span>Secure & Confidential</span>
+                </div>
+
+                <div class="benefit-item">
+                  <i class="material-icons">schedule</i>
+                  <span>Decisions in Hours</span>
+                </div>
+
+                <div class="benefit-item">
+                  <i class="material-icons">language</i>
+                  <span>UK-Based Support</span>
+                </div>
+
+                <div class="benefit-item">
+                  <i class="material-icons">thumb_up</i>
+                  <span>No Obligation to Proceed</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Need Help? -->
+            <div
+              class="application-card"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h3 class="form-group-title">Need Help?</h3>
+              <p>Have questions about the application process?</p>
+              <a href="faqs.html" class="btn btn-outline-primary mb-3 w-100"
+                >View FAQs</a
+              >
+              <p>Or call our application team:</p>
+              <a href="tel:03333333333" class="btn btn-outline-primary w-100">
+                <i
+                  class="material-icons align-middle me-1"
+                  style="font-size: 1rem"
+                  >phone</i
+                >
+                0333 333 3333
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <img
+              src="images/logo.png"
+              alt="QuickCap Ltd"
+              class="footer-logo mb-4"
+            />
+            <p class="footer-about">
+              QuickCap Ltd offers fast, simple, and flexible business funding
+              solutions to SMEs across the United Kingdom, helping fuel growth
+              and success.
+            </p>
+            <p class="copyright">© 2025 QuickCap Ltd. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="business-funding.html">Business Funding</a></li>
+              <li><a href="how-it-works.html">How It Works</a></li>
+              <li><a href="apply.html">Apply Now</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h4>Support & Legal</h4>
+            <ul class="footer-links">
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+              <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4>Contact Info</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="material-icons">location_on</i> 123 Business Street,
+                London, UK
+              </li>
+              <li>
+                <i class="material-icons">phone</i>
+                <a href="tel:03331231234">0333 123 1234</a>
+              </li>
+              <li>
+                <i class="material-icons">email</i>
+                <a href="mailto:info@quickcap.co.uk">info@quickcap.co.uk</a>
+              </li>
+            </ul>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook" class="social-icon-circle">
+                <span class="facebook-icon"></span>
+              </a>
+              <a href="#" aria-label="Twitter" class="social-icon-circle">
+                <span class="twitter-icon"></span>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="social-icon-circle">
+                <span class="linkedin-icon"></span>
+              </a>
+              <a href="#" aria-label="Instagram" class="social-icon-circle">
+                <span class="instagram-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-disclaimer">
+          <p>
+            QuickCap Ltd is a provider of unsecured business advances. All
+            funding is subject to status and affordability checks. Applicants
+            must be UK-based businesses. Repayments are typically made via daily
+            or weekly instalments. Late repayments may incur additional charges
+            and affect your credit rating.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true
+      })
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          document.querySelector('.navbar').classList.add('scrolled')
+        } else {
+          document.querySelector('.navbar').classList.remove('scrolled')
+        }
+      })
+
+      // Funding amount slider
+      const amountSlider = document.getElementById('amount-slider')
+      const amountValue = document.getElementById('amount-value')
+
+      amountSlider.addEventListener('input', function () {
+        // Format the value with commas
+        const formattedValue = Number(this.value).toLocaleString('en-UK')
+        amountValue.textContent = formattedValue
+      })
+
+      // Form submission
+      document
+        .getElementById('application-form')
+        .addEventListener('submit', function (e) {
+          e.preventDefault()
+          // Add form submission logic here
+
+          // Temporary alert for demonstration
+          alert(
+            'Application submitted successfully! Our team will be in touch shortly.'
+          )
+        })
+    </script>
+  </body>
+</html>

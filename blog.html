@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickCap Ltd Blog | Business Tips & Funding News for UK SMEs</title>
+    <meta
+      name="description"
+      content="Stay informed with the latest business insights, funding advice, and success stories for UK SMEs from the QuickCap Ltd blog."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Blog Page CSS -->
+    <style>
+      /* Blog specific styles */
+      .blog-section {
+        background-color: #f9fafb;
+        padding: 80px 0;
+      }
+
+      .blog-hero {
+        position: relative;
+        padding: 120px 0 80px;
+        background: linear-gradient(135deg, #0062cc, #003580);
+        color: white;
+        margin-bottom: 50px;
+        overflow: hidden;
+      }
+
+      .blog-shape {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #f9fafb;
+        border-radius: 100% 100% 0 0;
+        z-index: 1;
+      }
+
+      .featured-post-card {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+        margin-bottom: 50px;
+        background-color: white;
+      }
+
+      .featured-post-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .featured-post-content {
+        padding: 25px;
+      }
+
+      .featured-post-img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .post-card {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        height: 100%;
+        background-color: white;
+      }
+
+      .post-card:hover {
+        transform: translateY(-7px);
+      }
+
+      .post-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .post-content {
+        padding: 20px;
+      }
+
+      .post-category {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #0062cc;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .post-date {
+        font-size: 0.8rem;
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+
+      .post-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.25rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .featured-post-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .post-excerpt {
+        color: #6c757d;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .read-more {
+        display: inline-flex;
+        align-items: center;
+        color: #0062cc;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+
+      .read-more:hover {
+        text-decoration: underline;
+      }
+
+      .read-more i {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+
+      .blog-sidebar {
+        padding: 25px;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .sidebar-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .sidebar-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(135deg, #0062cc, #003580);
+      }
+
+      .search-form {
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .search-input {
+        border: 1px solid #e1e5ea;
+        border-radius: 6px 0 0 6px;
+        padding: 10px 15px;
+        flex-grow: 1;
+        font-size: 0.9rem;
+      }
+
+      .search-button {
+        background: #0062cc;
+        color: white;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        padding: 0 15px;
+      }
+
+      .category-list,
+      .recent-posts-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+      }
+
+      .category-list li,
+      .recent-posts-list li {
+        border-bottom: 1px solid #e1e5ea;
+        padding: 10px 0;
+      }
+
+      .category-list li:last-child,
+      .recent-posts-list li:last-child {
+        border-bottom: none;
+      }
+
+      .category-list a,
+      .recent-posts-list a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: block;
+      }
+
+      .category-list a:hover,
+      .recent-posts-list a:hover {
+        color: #0062cc;
+      }
+
+      .category-list span {
+        float: right;
+        background-color: #f1f5f9;
+        color: #6c757d;
+        border-radius: 12px;
+        padding: 2px 10px;
+        font-size: 0.75rem;
+      }
+
+      .pagination {
+        margin-top: 40px;
+        justify-content: center;
+      }
+
+      .page-link {
+        border: none;
+        color: #555;
+        margin: 0 5px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+      }
+
+      .page-item.active .page-link {
+        background-color: #0062cc;
+      }
+
+      .page-link:hover {
+        background-color: #e9ecef;
+        color: #0062cc;
+      }
+
+      @media (max-width: 767px) {
+        .blog-sidebar {
+          margin-top: 30px;
+        }
+
+        .featured-post-img {
+          height: 200px;
+        }
+      }
+    </style>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="QuickCap Ltd Logo" class="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="business-funding.html"
+                >Business Funding</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="how-it-works.html">How It Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="brokers.html">For Brokers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0 d-flex align-items-center">
+            <a href="tel:03333333333" class="phone-number me-3"
+              >0333 333 3333</a
+            >
+            <a href="apply.html" class="btn btn-primary apply-btn hover-float"
+              >Apply Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center" data-aos="fade-up">
+            <h1 class="animate__animated animate__fadeInUp">
+              The QuickCap Ltd Blog: Insights for UK Business Growth
+            </h1>
+            <p
+              class="lead animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              Your resource for expert advice, industry news, and success
+              stories to help your UK SME thrive.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="blog-shape"></div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-section">
+      <div class="container">
+        <!-- Featured Post -->
+        <div class="row mb-5" data-aos="fade-up">
+          <div class="col-12">
+            <div class="featured-post-card">
+              <div class="row g-0">
+                <div class="col-md-6">
+                  <img
+                    src="images/blog.png"
+                    alt="Featured post image"
+                    class="featured-post-img"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <div class="featured-post-content">
+                    <span class="post-category">Business Funding</span>
+                    <h2 class="featured-post-title">
+                      5 Smart Ways UK SMEs Are Using Business Funding in 2025
+                    </h2>
+                    <p class="post-date">May 15, 2025 • 8 min read</p>
+                    <p class="post-excerpt">
+                      Discover how forward-thinking UK small and medium
+                      enterprises are strategically investing their business
+                      funding to drive growth, improve operations, and stay
+                      ahead of competition in today's challenging market.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Blog Posts -->
+          <div class="col-lg-8">
+            <div class="row">
+              <!-- Post 1 -->
+              <div class="col-md-6 mb-4" data-aos="fade-up">
+                <div class="post-card">
+                  <img
+                    src="images/blog-2.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Cash Flow</span>
+                    <h3 class="post-title">
+                      Managing Seasonal Cash Flow Challenges for UK Retail
+                      Businesses
+                    </h3>
+                    <p class="post-date">May 10, 2025 • 5 min read</p>
+                    <p class="post-excerpt">
+                      Learn effective strategies for navigating the peaks and
+                      troughs of seasonal demand while maintaining healthy
+                      business finances.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post 2 -->
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="post-card">
+                  <img
+                    src="images/blog-3.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Growth Strategies</span>
+                    <h3 class="post-title">
+                      Expansion Planning: How to Know When Your SME is Ready to
+                      Grow
+                    </h3>
+                    <p class="post-date">May 5, 2025 • 6 min read</p>
+                    <p class="post-excerpt">
+                      Identify the key indicators that signal your business is
+                      primed for expansion and learn how to prepare financially.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post 3 -->
+              <div class="col-md-6 mb-4" data-aos="fade-up">
+                <div class="post-card">
+                  <img
+                    src="images/blog-3.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Success Stories</span>
+                    <h3 class="post-title">
+                      From Local Shop to National Brand: The Success Story of
+                      CraftyCo
+                    </h3>
+                    <p class="post-date">April 28, 2025 • 7 min read</p>
+                    <p class="post-excerpt">
+                      How a small Manchester-based craft supplies shop used
+                      strategic funding to transform into a household name
+                      across the UK.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post 4 -->
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="post-card">
+                  <img
+                    src="images/blog-4.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Tax & Finance</span>
+                    <h3 class="post-title">
+                      2025 UK Tax Changes: What Every Small Business Owner Needs
+                      to Know
+                    </h3>
+                    <p class="post-date">April 22, 2025 • 5 min read</p>
+                    <p class="post-excerpt">
+                      Stay ahead of the latest tax regulations and learn how
+                      they impact your SME's financial planning and cash flow.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post 5 -->
+              <div class="col-md-6 mb-4" data-aos="fade-up">
+                <div class="post-card">
+                  <img
+                    src="images/blog.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Industry Insights</span>
+                    <h3 class="post-title">
+                      The Rise of Sustainable Manufacturing in the UK: Trends &
+                      Opportunities
+                    </h3>
+                    <p class="post-date">April 15, 2025 • 6 min read</p>
+                    <p class="post-excerpt">
+                      Explore how UK manufacturers are embracing sustainability
+                      and the funding options available for green initiatives.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post 6 -->
+              <div
+                class="col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="post-card">
+                  <img
+                    src="images/blog-2.png"
+                    alt="Blog post image"
+                    class="post-img"
+                  />
+                  <div class="post-content">
+                    <span class="post-category">Technology</span>
+                    <h3 class="post-title">
+                      Digital Transformation on a Budget: Tech Solutions for
+                      Small Businesses
+                    </h3>
+                    <p class="post-date">April 8, 2025 • 5 min read</p>
+                    <p class="post-excerpt">
+                      Discover cost-effective ways to digitize your operations
+                      and how strategic funding can accelerate your tech
+                      adoption.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read Article
+                      <i class="material-icons">arrow_forward</i></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Blog pagination" class="mt-5">
+              <ul class="pagination">
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true"
+                      ><i class="material-icons" style="font-size: 16px"
+                        >arrow_forward</i
+                      ></span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="blog-sidebar">
+              <!-- Search Form -->
+              <div class="search-box mb-4">
+                <h4 class="sidebar-title">Search</h4>
+                <form class="search-form">
+                  <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search articles..."
+                  />
+                  <button type="submit" class="search-button">
+                    <i class="material-icons">search</i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Categories -->
+              <div class="categories mb-4">
+                <h4 class="sidebar-title">Categories</h4>
+                <ul class="category-list">
+                  <li>
+                    <a href="#">Business Funding <span>8</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Growth Strategies <span>12</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Cash Flow <span>7</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Success Stories <span>5</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Industry Insights <span>9</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Tax & Finance <span>6</span></a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Recent Posts -->
+              <div class="recent-posts mb-4">
+                <h4 class="sidebar-title">Recent Posts</h4>
+                <ul class="recent-posts-list">
+                  <li>
+                    <a href="#"
+                      >How to Prepare Your Business for Economic Uncertainty</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      >The Complete Guide to Invoice Finance for UK SMEs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      >Building Business Credit: A Step-by-Step Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      >Hospitality Industry Trends: What to Watch in 2025</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      >Marketing ROI: Measuring the Impact of Your Campaigns</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Newsletter Signup -->
+              <div class="newsletter">
+                <h4 class="sidebar-title">Subscribe</h4>
+                <p>
+                  Get the latest business insights delivered directly to your
+                  inbox.
+                </p>
+                <form>
+                  <div class="mb-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your email address"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section about-cta-section">
+      <div class="container">
+        <div class="cta-content text-center glass-card" data-aos="fade-up">
+          <h2>Ready to Take Your Business to the Next Level?</h2>
+          <p>
+            Don't let funding hold you back. QuickCap Ltd provides the fast,
+            flexible capital UK businesses need to thrive. Apply today for a
+            no-obligation quote.
+          </p>
+          <div class="cta-buttons">
+            <a href="apply.html" class="btn btn-primary btn-lg hover-float"
+              >Apply for Funding</a
+            >
+            <a
+              href="contact.html"
+              class="btn btn-outline-primary btn-lg ms-3 hover-float"
+              >Contact Our Team</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <img
+              src="images/logo.png"
+              alt="QuickCap Ltd"
+              class="footer-logo mb-4"
+            />
+            <p class="footer-about">
+              QuickCap Ltd offers fast, simple, and flexible business funding
+              solutions to SMEs across the United Kingdom, helping fuel growth
+              and success.
+            </p>
+            <p class="copyright">© 2025 QuickCap Ltd. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="business-funding.html">Business Funding</a></li>
+              <li><a href="how-it-works.html">How It Works</a></li>
+              <li><a href="apply.html">Apply Now</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h4>Support & Legal</h4>
+            <ul class="footer-links">
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+              <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4>Contact Info</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="material-icons">location_on</i> 123 Business Street,
+                London, UK
+              </li>
+              <li>
+                <i class="material-icons">phone</i>
+                <a href="tel:03331231234">0333 123 1234</a>
+              </li>
+              <li>
+                <i class="material-icons">email</i>
+                <a href="mailto:info@quickcap.co.uk">info@quickcap.co.uk</a>
+              </li>
+            </ul>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook" class="social-icon-circle">
+                <span class="facebook-icon"></span>
+              </a>
+              <a href="#" aria-label="Twitter" class="social-icon-circle">
+                <span class="twitter-icon"></span>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="social-icon-circle">
+                <span class="linkedin-icon"></span>
+              </a>
+              <a href="#" aria-label="Instagram" class="social-icon-circle">
+                <span class="instagram-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-disclaimer">
+          <p>
+            QuickCap Ltd is a provider of unsecured business advances. All
+            funding is subject to status and affordability checks. Applicants
+            must be UK-based businesses. Repayments are typically made via daily
+            or weekly instalments. Late repayments may incur additional charges
+            and affect your credit rating.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+    <!-- Initialize AOS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        })
+      })
+    </script>
+  </body>
+</html>

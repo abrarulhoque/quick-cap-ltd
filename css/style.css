@@ -68,8 +68,19 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--dark);
   line-height: 1.6;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: var(--gray-light);
+}
+
+/* Add utility class to prevent overflow */
+img,
+iframe,
+table,
+pre,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,

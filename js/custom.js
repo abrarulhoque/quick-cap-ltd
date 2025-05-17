@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const observeCounters = () => {
-    const counters = document.querySelectorAll('.counter-value')
+    const counters = document.querySelectorAll('.counter')
 
     const observer = new IntersectionObserver(
       entries => {
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Initialize counter animations if counters exist
-  if (document.querySelector('.counter-value')) {
+  if (document.querySelector('.counter')) {
     observeCounters()
   }
 

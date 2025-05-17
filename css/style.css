@@ -793,7 +793,7 @@ section {
 .footer-logo {
   height: 40px;
   margin-bottom: 1.5rem;
-  filter: brightness(0) invert(1);
+  /* Removed the filter that was making the logo white and invisible */
 }
 
 .footer-about {
@@ -1311,6 +1311,7 @@ section {
 
 .footer-logo {
   height: 45px;
+  /* No filter applied here to ensure logo is visible */
 }
 
 .footer h4 {
